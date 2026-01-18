@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html lang="ja">  
+<head>  
+    <meta charset="UTF-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <title>安心・安全ナビ MVP</title>  
+  
+    <link rel="stylesheet" href="styles.css">  
+  
+    <!-- Leaflet -->  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>  
+</head>  
+  
+<body>  
+  
+    <!-- オーバーレイ -->  
+    <div id="overlay" class="hidden"></div>  
+  
+    <!-- 地図 -->  
+    <div id="map"></div>  
+  
+    <!-- フッターボタン -->  
+    <footer>  
+        <button id="bus-btn">🚌</button>  
+        <button id="destination-btn">行き先</button>  
+        <button id="locate-btn">📍</button>  
+    </footer>  
+  
+    <!-- 行き先ポップアップ -->  
+    <div id="destination-popup" class="popup hidden">  
+        <h3>行き先を選ぶ</h3>  
+  
+        <label>出発地</label>  
+        <select id="start-select">  
+            <option value="gps">現在地</option>  
+            <option value="hiroshima">広島駅</option>  
+        </select>  
+  
+        <label>行き先</label>  
+        <select id="destination-list">  
+            <option value="hondori">本通商店街</option>  
+            <option value="peacePark">平和記念公園</option>  
+            <option value="orizuruTower">おりづるタワー</option>  
+        </select>  
+  
+        <button id="destination-ok" class="primary">決定</button>  
+        <button id="destination-close">閉じる</button>  
+    </div>  
+  
+    <!-- バススキャン -->  
+    <div id="bus-popup" class="popup hidden">  
+        <p>バスをスキャンしますか？</p>  
+        <button id="bus-scan" class="primary">スキャンへ</button>  
+        <button id="bus-close">閉じる</button>  
+    </div>  
+  
+    <script src="app.js"></script>  
+</body>  
+</html>  
